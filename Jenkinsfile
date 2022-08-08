@@ -9,7 +9,7 @@ pipeline {
         AWS_EB_APP_VERSION = "${BUILD_ID}"
         AWS_EB_ENVIRONMENT = "Mvnapp-env"
         SONAR_IP = "52.23.193.18"
-        // SONAR_TOKEN ="sqp_fad64804dadddcb4fdad409580fe260867eb55cd"
+        SONAR_TOKEN ="sqp_665d50d06a410aa3653342c060495cb3d3620973"
        
        
     }
@@ -36,17 +36,17 @@ pipeline {
                 }
             }
         }
-        //  stage ('Quality Scan'){
-        //     steps{
-        //         sh '''
-        //         mvn clean verify sonar:sonar \
-        //           -Dsonar.projectKey=eman-project \
-        //           -Dsonar.host.url=http://$SONAR_IP \
-        //           -Dsonar.login=$SONAR_TOKEN
-        //         '''
-        //     }
+         stage ('Quality Scan'){
+            steps{
+                sh '''
+                mvn clean verify sonar:sonar \
+                  -Dsonar.projectKey=emanalotaibi-mvn \
+                  -Dsonar.host.url=http://$SONAR_IP \
+                  -Dsonar.login=$SONAR_TOKEN
+                '''
+            }
 
-        //  }
+         }
          stage('Package') {
             steps {
                 sh "mvn package"
