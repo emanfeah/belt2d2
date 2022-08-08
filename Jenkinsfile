@@ -7,7 +7,7 @@ pipeline {
         ARTIFACT_NAME = "hello-world.war"
         AWS_EB_APP_NAME = "mvn-app"
         AWS_EB_APP_VERSION = "${BUILD_ID}"
-        AWS_EB_ENVIRONMENT = "Mvnapp-env"
+        AWS_EB_ENVIRONMENT = "Mvnapp-env-1"
         SONAR_IP = "52.23.193.18"
         SONAR_TOKEN ="sqp_665d50d06a410aa3653342c060495cb3d3620973"
        
